@@ -1,88 +1,323 @@
-/* Reset default styles */
+/* General Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
+    font-family: 'Poppins', sans-serif;
+    background: #f0f0f0;
     color: #333;
+    line-height: 1.6;
 }
 
-/* Header styles */
+/* Spacing and Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Navbar Styles */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem 0;
+    background-color: #2C3E50;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 100;
 }
 
 header h1 {
-    text-align: center;
+    color: #fff;
+    margin-bottom: 10px;
 }
 
 nav ul {
+    display: flex;
+    justify-content: center;
     list-style: none;
-    text-align: center;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 10px;
+    gap: 30px;
+    padding: 10px 0;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 500;
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    color: #3498DB;
 }
 
-/* Container styles */
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
+/* Hero Section */
+#hero {
+    background: linear-gradient(to bottom, rgba(44, 62, 80, 0.9), rgba(52, 152, 219, 0.9)), url('https://source.unsplash.com/random/1600x900');
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding: 0 20px;
 }
 
-/* Section styles */
+.hero-content {
+    text-align: center;
+    max-width: 600px;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    animation: fadeInDown 1.2s;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    margin-bottom: 20px;
+}
+
+.hero-content .btn {
+    background: #3498DB;
+    padding: 10px 30px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.hero-content .btn:hover {
+    background: #2980B9;
+}
+
+/* Sections */
 section {
-    padding: 2rem 0;
+    padding: 80px 20px;
 }
 
 section h2 {
-    margin-bottom: 1rem;
-    color: #444;
+    margin-bottom: 40px;
 }
 
-.job {
-    margin-bottom: 1.5rem;
+/* Experience Section */
+#experience {
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
-.job h3 {
-    color: #333;
+.experience-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: transform 0.3s ease-in-out;
 }
 
-/* Contact section */
-#contact a {
-    color: #333;
-    text-decoration: none;
+.experience-card:hover {
+    transform: scale(1.05);
 }
 
-#contact a:hover {
-    text-decoration: underline;
+.experience-card h3 {
+    margin-bottom: 10px;
 }
 
-/* Footer styles */
-footer {
-    background-color: #333;
-    color: #fff;
+.experience-card span {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.experience-card p {
+    line-height: 1.6;
+}
+
+/* Steps Under the Internship */
+.internship-steps {
+    background: #ecf0f1;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.internship-steps ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.internship-steps ul li {
+    margin-bottom: 10px;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.skill ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skill li {
+    margin-bottom: 8px;
+}
+
+/* About Section */
+#about {
+    padding-bottom: 100px;
+}
+
+#about p {
     text-align: center;
-    padding: 1rem 0;
-    margin-top: 2rem;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+}
+
+/* Contact Section */
+#contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#contact form input, #contact form textarea {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#contact form button {
+    padding: 15px;
+    background: #3498DB;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#contact form button:hover {
+    background: #2980B9;
+}
+
+/* Footer */
+footer {
+    background-color: #2C3E50;
+    padding: 15px 0;
+    text-align: center;
+    color: #fff;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Spacing and Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+header nav ul li {
+    margin: 0 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Projects Section */
+#projects .project-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#projects .project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+#projects .project-card span {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+#projects .project-card p {
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* Certifications Section */
+#certifications .certification-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#certifications .certification-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+#certifications .certification-card span {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+#certifications .certification-card p {
+    font-size: 1rem;
+    line-height: 1.4;
 }
